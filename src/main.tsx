@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
@@ -34,3 +35,13 @@ createRoot(document.getElementById("root")!).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
+
+//exercice :
+// redo everything from the routing/react-router-dom-declarative-solution branch,
+// but in data mode (createBrowserRouter + route objects):
+// - add links to auth pages to redirect to login and register pages
+// - add to users list, for every user a list of items, and on the user details page,
+//   display the list of items for that user and make them clickable to redirect to
+//   a new page with the item details.
+// - use loaders (+ useLoaderData) to provide the data to the user details and the
+//   item details pages, like it's done for the users list.
