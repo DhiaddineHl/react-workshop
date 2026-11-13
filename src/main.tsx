@@ -9,6 +9,7 @@ import Login from "./pages/Login.tsx";
 import Register from "./pages/Register.tsx";
 import Users from "./pages/Users.tsx";
 import UserDetails from "./pages/UserDetails.tsx";
+import ItemDetails from "./pages/ItemDetails.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/users">
           <Route index element={<Users />} />
           <Route path=":id" element={<UserDetails />} />
+          <Route path=":id/items/:itemId" element={<ItemDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

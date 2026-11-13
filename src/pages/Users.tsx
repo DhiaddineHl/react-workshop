@@ -1,25 +1,24 @@
 import { Link } from "react-router";
-
-const usersList = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Alice Johnson" },
-];
+import { usersList } from "../data/users";
 
 const Users = () => {
   return (
-    <div>
-      <h1>Users</h1>
-      <ul>
+    <div className="container py-4">
+      <h1 className="mb-4">Users</h1>
+      <div className="list-group">
         {usersList.map((user) => (
-          <>
-            <Link key={user.id} to={`/users/${user.id}`}>
-              {user.name}
-            </Link>
-            <br />
-          </>
+          <Link
+            key={user.id}
+            to={`/users/${user.id}`}
+            className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+          >
+            {user.name}
+            <span className="badge text-bg-primary rounded-pill">
+              {user.items.length} items
+            </span>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
