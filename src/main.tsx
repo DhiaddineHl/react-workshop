@@ -11,28 +11,35 @@ import Users, { usersLoader } from "./pages/Users.tsx";
 import UserDetails, { userDetailsLoader } from "./pages/UserDetails.tsx";
 import ItemDetails, { itemDetailsLoader } from "./pages/ItemDetails.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
+import RootLayout from "./layouts/RootLayout.tsx";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/about", element: <About /> },
   {
-    path: "/auth",
-    element: <AuthLayout />,
+    path: "/",
+    element: <RootLayout />,
     children: [
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
-    ],
-  },
-  {
-    path: "/users",
-    errorElement: <ErrorPage />,
-    children: [
-      { index: true, element: <Users />, loader: usersLoader },
-      { path: ":id", element: <UserDetails />, loader: userDetailsLoader },
+      { index: true, element: <Home /> },
+      { path: "about", element: <About /> },
       {
-        path: ":id/items/:itemId",
-        element: <ItemDetails />,
-        loader: itemDetailsLoader,
+        path: "auth",
+        element: <AuthLayout />,
+        children: [
+          { path: "login", element: <Login /> },
+          { path: "register", element: <Register /> },
+        ],
+      },
+      {
+        path: "users",
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <Users />, loader: usersLoader },
+          { path: ":id", element: <UserDetails />, loader: userDetailsLoader },
+          {
+            path: ":id/items/:itemId",
+            element: <ItemDetails />,
+            loader: itemDetailsLoader,
+          },
+        ],
       },
     ],
   },

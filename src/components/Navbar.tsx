@@ -1,0 +1,80 @@
+import { useState } from "react";
+import { Link, NavLink } from "react-router";
+
+const appLinks = [
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About" },
+  { to: "/users", label: "Users" },
+];
+
+const authLinks = [
+  { to: "/auth/login", label: "Login" },
+  { to: "/auth/register", label: "Register" },
+];
+
+const Navbar = () => {
+  // Bootstrap's JS isn't loaded, so the mobile collapse is driven by state.
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+      <div className="container">
+        <Link to="/" className="navbar-brand fw-semibold" onClick={close}>
+          React Workshop
+        </Link>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          aria-controls="main-navbar"
+          aria-expanded={open}
+          aria-label="Toggle navigation"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+
+        <div
+          id="main-navbar"
+          className={`collapse navbar-collapse${open ? " show" : ""}`}
+        >
+          <ul className="navbar-nav me-auto">
+            {appLinks.map((link) => (
+              <li className="nav-item" key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.end}
+                  className="nav-link"
+                  onClick={close}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="navbar-nav ms-auto gap-md-2">
+            {authLinks.map((link, i) => (
+              <li className="nav-item" key={link.to}>
+                <NavLink
+                  to={link.to}
+                  onClick={close}
+                  className={({ isActive }) =>
+                    i === authLinks.length - 1
+                      ? `btn btn-sm btn-primary my-1 my-md-0 px-3${isActive ? " active" : ""}`
+                      : "nav-link"
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

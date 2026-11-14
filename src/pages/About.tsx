@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router";
 
 const About = () => {
@@ -9,9 +8,11 @@ const About = () => {
   };
 
   return (
-    <div>
-      About
-      <button onClick={goHome}>Go home</button>
+    <div className="container py-4">
+      <h1>About</h1>
+      <button className="btn btn-outline-secondary" onClick={goHome}>
+        Go home
+      </button>
     </div>
   );
 };
