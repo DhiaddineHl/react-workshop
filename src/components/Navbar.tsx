@@ -5,6 +5,7 @@ const appLinks = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
   { to: "/users", label: "Users" },
+  { to: "/shop", label: "Shop" },
 ];
 
 const authLinks = [

@@ -12,6 +12,7 @@ import UserDetails, { userDetailsLoader } from "./pages/UserDetails.tsx";
 import ItemDetails, { itemDetailsLoader } from "./pages/ItemDetails.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import RootLayout from "./layouts/RootLayout.tsx";
+import Shop from "./pages/Shop.tsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
+      { path: "shop", element: <Shop /> },
       {
         path: "auth",
         element: <AuthLayout />,

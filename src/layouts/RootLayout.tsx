@@ -1,5 +1,7 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
+import { useState } from "react";
+import Shop from "../pages/Shop";
 
 const RootLayout = () => {
   return (
