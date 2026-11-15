@@ -1,5 +1,3 @@
-import { Link } from "react-router";
-
 const usersList = [
   { id: 1, name: "John Doe" },
   { id: 2, name: "Jane Smith" },
@@ -13,9 +11,7 @@ const Users = () => {
       <ul>
         {usersList.map((user) => (
           <>
-            <Link key={user.id} to={`/users/${user.id}`}>
-              {user.name}
-            </Link>
+            {user.name}
             <br />
           </>
         ))}
