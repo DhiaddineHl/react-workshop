@@ -1,11 +1,6 @@
 import { Fragment } from "react";
 import { Link, useLoaderData } from "react-router";
-
-const usersList = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Alice Johnson" },
-];
+import { usersList } from "../data/users";
 
 // In data mode, a loader runs before the route renders and provides its data.
 export const usersLoader = () => {
