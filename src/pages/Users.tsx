@@ -1,10 +1,5 @@
 import { Link } from "react-router";
-
-const usersList = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Alice Johnson" },
-];
+import { usersList } from "../data/users";
 
 const Users = () => {
   return (
