@@ -1,14 +1,18 @@
 import { useState } from "react";
 import Product from "./Product";
+// import { Cart } from "../App";
+import { products } from "../stores/ShopStore";
 
-const products = [
-  { id: 1, name: "Product 1", price: 10 },
-  { id: 2, name: "Product 2", price: 20 },
-  { id: 3, name: "Product 3", price: 30 },
-];
+// const products = [
+//   { id: 1, name: "Product 1", price: 10 },
+//   { id: 2, name: "Product 2", price: 20 },
+//   { id: 3, name: "Product 3", price: 30 },
+// ];
 
 interface ProductsListProps {
   searchTerm: string;
+  // cart: Cart;
+  // setCart: (cart: Cart) => void;
 }
 
 const ProductsList = ({ searchTerm }: ProductsListProps) => {
@@ -24,6 +28,8 @@ const ProductsList = ({ searchTerm }: ProductsListProps) => {
           id={product.id}
           name={product.name}
           price={product.price}
+          // cart={cart}
+          // setCart={setCart}
         />
       ))}
     </div>

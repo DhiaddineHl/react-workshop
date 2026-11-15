@@ -13,6 +13,8 @@ import ItemDetails, { itemDetailsLoader } from "./pages/ItemDetails.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import RootLayout from "./layouts/RootLayout.tsx";
 import Shop from "./pages/Shop.tsx";
+import App from "./App.tsx";
+// import { ShopProvider } from "./contexts/ShopContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    {/* zustand needs no provider */}
+    {/* <ShopProvider> */}
+    {/* <RouterProvider router={router} /> */}
+    <App />
+    {/* </ShopProvider> */}
   </StrictMode>,
 );

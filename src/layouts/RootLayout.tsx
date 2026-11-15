@@ -6,7 +6,7 @@ import Shop from "../pages/Shop";
 const RootLayout = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="flex-grow-1 d-flex flex-column">
         <Outlet />
       </main>

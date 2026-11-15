@@ -1,6 +1,12 @@
 import { useState } from "react";
 import ProductsList from "../components/ProductsList";
 import SearchInput from "../components/SearchInput";
+// import { Cart } from "../App";
+
+// interface ShopProps {
+//   cart: Cart;
+//   setCart: (cart: Cart) => void;
+// }
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,6 +22,7 @@ const Shop = () => {
         </div>
       </div>
 
+      {/* <ProductsList searchTerm={searchTerm} cart={cart} setCart={setCart} /> */}
       <ProductsList searchTerm={searchTerm} />
     </div>
   );
