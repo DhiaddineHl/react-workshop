@@ -17,19 +17,19 @@ const registerFields = z.object({
   password: z
     .string()
     .min(8, {
-      message: "Le mot de passe doit contenir au moins 8 caractères",
+      message: "Password must be at least 8 characters long",
     })
     .regex(/[A-Z]/, {
-      message: "Le mot de passe doit contenir au moins une majuscule (A-Z)",
+      message: "Password must contain at least one uppercase letter (A-Z)",
     })
     .regex(/[a-z]/, {
-      message: "Le mot de passe doit contenir au moins une minuscule (a-z)",
+      message: "Password must contain at least one lowercase letter (a-z)",
     })
     .regex(/[0-9]/, {
-      message: "Le mot de passe doit contenir au moins un chiffre (0-9)",
+      message: "Password must contain at least one digit (0-9)",
     })
     .regex(/[^A-Za-z0-9]/, {
-      message: "Le mot de passe doit contenir au moins un caractère spécial",
+      message: "Password must contain at least one special character",
     }),
   confirmPassword: z.string(),
 });
